@@ -85,7 +85,8 @@
         $campaignName = "Spring Sale 2025";
         $orderCount = 150;
         $productPrice = 99.99;
-        $productType = "Thời trang";
+        $types = ["Điện tử", "Thời trang", "Gia dụng"];
+        $productType = $types[array_rand($types)];
         $campaignStatus = true;
         $orderList = array(
             "ID001" => 0,
@@ -94,7 +95,7 @@
             "ID004" => 0,
             "ID005" => 0
         );
-        
+
         $totalAssigned = 0;
         $orderIds = array_keys($orderList);
         foreach ($orderIds as $id) {
@@ -110,7 +111,7 @@
         foreach ($orderList as $id => $quantity) {
             $totalRevenue += $productPrice * $quantity;
         }
-        
+
         $commissionCost = $totalRevenue * COMMISSION_RATE;
         $vatCost = $totalRevenue * VAT_RATE;
         $profit = $totalRevenue - $commissionCost - $vatCost;

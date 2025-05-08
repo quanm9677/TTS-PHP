@@ -202,7 +202,7 @@ $level1Amounts = array_map(fn($c) => $c['commission'], $level1);
                     <th>Cấp</th>
                     <th>Đơn hàng</th>
                     <th>Người mua</th>
-                    
+
                     <th>Số tiền nhận được (USD)</th>
                 </tr>
                 <?php
