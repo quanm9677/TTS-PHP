@@ -106,6 +106,7 @@ if (isset($_SESSION['transactions'])) {
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,23 +118,29 @@ if (isset($_SESSION['transactions'])) {
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 600px;
             margin: 40px auto;
             background: #fff;
             border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             padding: 32px 28px 24px 28px;
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             text-align: center;
             color: #2d3a4a;
         }
+
         form {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
+
         label {
             font-weight: 500;
             color: #34495e;
@@ -141,7 +148,9 @@ if (isset($_SESSION['transactions'])) {
             flex-direction: column;
             gap: 4px;
         }
-        input[type="text"], textarea {
+
+        input[type="text"],
+        textarea {
             padding: 8px 12px;
             border: 1px solid #d1d5db;
             border-radius: 8px;
@@ -149,21 +158,26 @@ if (isset($_SESSION['transactions'])) {
             background: #f9fafb;
             transition: border 0.2s;
         }
-        input[type="text"]:focus, textarea:focus {
+
+        input[type="text"]:focus,
+        textarea:focus {
             border: 1.5px solid #007bff;
             outline: none;
             background: #fff;
         }
+
         .radio-group {
             display: flex;
             gap: 24px;
             align-items: center;
         }
+
         .radio-group label {
             flex-direction: row;
             gap: 6px;
             font-weight: 400;
         }
+
         input[type="submit"] {
             background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
             color: #fff;
@@ -173,13 +187,15 @@ if (isset($_SESSION['transactions'])) {
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
             transition: background 0.2s, transform 0.1s;
         }
+
         input[type="submit"]:hover {
             background: linear-gradient(90deg, #0056b3 60%, #00aaff 100%);
             transform: translateY(-2px) scale(1.03);
         }
+
         .error {
             color: #e74c3c;
             background: #fdecea;
@@ -188,9 +204,11 @@ if (isset($_SESSION['transactions'])) {
             padding: 10px 18px;
             margin-bottom: 16px;
         }
+
         .success {
             color: #27ae60;
         }
+
         table {
             border-collapse: separate;
             border-spacing: 0;
@@ -199,30 +217,37 @@ if (isset($_SESSION['transactions'])) {
             background: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
-        th, td {
+
+        th,
+        td {
             border-bottom: 1px solid #f0f0f0;
             padding: 10px 12px;
             text-align: left;
         }
+
         th {
             background: #f3f7fa;
             color: #007bff;
             font-weight: 600;
         }
+
         tr:last-child td {
             border-bottom: none;
         }
+
         tr:hover {
             background: #f0f8ff;
             transition: background 0.2s;
         }
+
         hr {
             margin: 32px 0 12px 0;
             border: none;
             border-top: 1.5px solid #e0e0e0;
         }
+
         .stat {
             display: flex;
             justify-content: space-between;
@@ -232,6 +257,7 @@ if (isset($_SESSION['transactions'])) {
             margin: 8px 0;
             font-size: 1.08rem;
         }
+
         .delete-btn {
             background: linear-gradient(90deg, #ff5858 60%, #ffb347 100%);
             color: #fff;
@@ -241,81 +267,84 @@ if (isset($_SESSION['transactions'])) {
             font-size: 0.98rem;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 1px 4px rgba(255,88,88,0.08);
+            box-shadow: 0 1px 4px rgba(255, 88, 88, 0.08);
             transition: background 0.2s, transform 0.1s;
         }
+
         .delete-btn:hover {
             background: linear-gradient(90deg, #d7263d 60%, #ffb347 100%);
             transform: scale(1.07);
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-<h1>Ứng Dụng Quản Lý Giao Dịch Tài Chính</h1>
-<!-- Hiển thị lỗi nếu có -->
-<?php
-if (!empty($errors)) {
-    echo '<div class="error">';
-    foreach ($errors as $error) {
-        echo "<p>$error</p>";
-    }
-    echo '</div>';
-}
-?>
-<!-- Biểu mẫu nhập giao dịch -->
-<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label for="transaction_name">Tên giao dịch:
-        <input type="text" id="transaction_name" name="transaction_name" required>
-    </label>
-    <label for="amount">Số tiền:
-        <input type="text" id="amount" name="amount" required>
-    </label>
-    <div class="radio-group">
-        <label><input type="radio" id="thu" name="transaction_type" value="thu" required> Thu</label>
-        <label><input type="radio" id="chi" name="transaction_type" value="chi" required> Chi</label>
+    <div class="container">
+        <h1>Ứng Dụng Quản Lý Giao Dịch Tài Chính</h1>
+        <!-- Hiển thị lỗi nếu có -->
+        <?php
+        if (!empty($errors)) {
+            echo '<div class="error">';
+            foreach ($errors as $error) {
+                echo "<p>$error</p>";
+            }
+            echo '</div>';
+        }
+        ?>
+        <!-- Biểu mẫu nhập giao dịch -->
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <label for="transaction_name">Tên giao dịch:
+                <input type="text" id="transaction_name" name="transaction_name" required>
+            </label>
+            <label for="amount">Số tiền:
+                <input type="text" id="amount" name="amount" required>
+            </label>
+            <div class="radio-group">
+                <label><input type="radio" id="thu" name="transaction_type" value="thu" required> Thu</label>
+                <label><input type="radio" id="chi" name="transaction_type" value="chi" required> Chi</label>
+            </div>
+            <label for="note">Ghi chú:
+                <textarea id="note" name="note"></textarea>
+            </label>
+            <label for="date">Ngày thực hiện:
+                <input type="text" id="date" name="date" placeholder="dd/mm/yyyy" required>
+            </label>
+            <input type="submit" value="Lưu giao dịch">
+        </form>
+        <hr>
+        <!-- Hiển thị danh sách giao dịch -->
+        <h2>Danh sách giao dịch:</h2>
+        <?php
+        if (isset($_SESSION['transactions']) && !empty($_SESSION['transactions'])) {
+            echo '<table>';
+            echo '<tr><th>Tên giao dịch</th><th>Số tiền</th><th>Loại giao dịch</th><th>Ghi chú</th><th>Ngày thực hiện</th><th>Xóa</th></tr>';
+            foreach ($_SESSION['transactions'] as $idx => $transaction) {
+                echo '<tr>';
+                echo '<td>' . htmlspecialchars($transaction['transaction_name']) . '</td>';
+                echo '<td>' . number_format($transaction['amount'], 2) . '</td>';
+                echo '<td>' . ucfirst($transaction['transaction_type']) . '</td>';
+                echo '<td>' . htmlspecialchars($transaction['note']) . '</td>';
+                echo '<td>' . htmlspecialchars($transaction['date']) . '</td>';
+                echo '<td>';
+                echo '<form method="POST" action="' . $_SERVER['PHP_SELF'] . '" style="display:inline;">';
+                echo '<input type="hidden" name="delete_index" value="' . $idx . '">';
+                echo '<button type="submit" class="delete-btn" onclick="return confirm(\'Bạn có chắc muốn xóa giao dịch này?\');">Xóa</button>';
+                echo '</form>';
+                echo '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
+        } else {
+            echo '<p>Chưa có giao dịch nào.</p>';
+        }
+        ?>
+        <hr>
+        <!-- Thống kê tổng thu, tổng chi và số dư -->
+        <h3>Thống kê:</h3>
+        <div class="stat"><span><strong>Tổng thu:</strong></span> <span class="success"><?php echo number_format($GLOBALS['total_income'], 2); ?> VND</span></div>
+        <div class="stat"><span><strong>Tổng chi:</strong></span> <span style="color:#e74c3c"><?php echo number_format($GLOBALS['total_expense'], 2); ?> VND</span></div>
+        <div class="stat"><span><strong>Số dư:</strong></span> <span><strong><?php echo number_format($GLOBALS['total_income'] - $GLOBALS['total_expense'], 2); ?> VND</strong></span></div>
     </div>
-    <label for="note">Ghi chú:
-        <textarea id="note" name="note"></textarea>
-    </label>
-    <label for="date">Ngày thực hiện:
-        <input type="text" id="date" name="date" placeholder="dd/mm/yyyy" required>
-    </label>
-    <input type="submit" value="Lưu giao dịch">
-</form>
-<hr>
-<!-- Hiển thị danh sách giao dịch -->
-<h2>Danh sách giao dịch:</h2>
-<?php
-if (isset($_SESSION['transactions']) && !empty($_SESSION['transactions'])) {
-    echo '<table>';
-    echo '<tr><th>Tên giao dịch</th><th>Số tiền</th><th>Loại giao dịch</th><th>Ghi chú</th><th>Ngày thực hiện</th><th>Xóa</th></tr>';
-    foreach ($_SESSION['transactions'] as $idx => $transaction) {
-        echo '<tr>';
-        echo '<td>' . htmlspecialchars($transaction['transaction_name']) . '</td>';
-        echo '<td>' . number_format($transaction['amount'], 2) . '</td>';
-        echo '<td>' . ucfirst($transaction['transaction_type']) . '</td>';
-        echo '<td>' . htmlspecialchars($transaction['note']) . '</td>';
-        echo '<td>' . htmlspecialchars($transaction['date']) . '</td>';
-        echo '<td>';
-        echo '<form method="POST" action="' . $_SERVER['PHP_SELF'] . '" style="display:inline;">';
-        echo '<input type="hidden" name="delete_index" value="' . $idx . '">';
-        echo '<button type="submit" class="delete-btn" onclick="return confirm(\'Bạn có chắc muốn xóa giao dịch này?\');">Xóa</button>';
-        echo '</form>';
-        echo '</td>';
-        echo '</tr>';
-    }
-    echo '</table>';
-} else {
-    echo '<p>Chưa có giao dịch nào.</p>';
-}
-?>
-<hr>
-<!-- Thống kê tổng thu, tổng chi và số dư -->
-<h3>Thống kê:</h3>
-<div class="stat"><span><strong>Tổng thu:</strong></span> <span class="success"><?php echo number_format($GLOBALS['total_income'], 2); ?> VND</span></div>
-<div class="stat"><span><strong>Tổng chi:</strong></span> <span style="color:#e74c3c"><?php echo number_format($GLOBALS['total_expense'], 2); ?> VND</span></div>
-<div class="stat"><span><strong>Số dư:</strong></span> <span><strong><?php echo number_format($GLOBALS['total_income'] - $GLOBALS['total_expense'], 2); ?> VND</strong></span></div>
-</div>
 </body>
+
 </html>
