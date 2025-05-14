@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Tên: Nguyễn Văn A | Email: a@gmail.com | Tỷ lệ hoa hồng: 5.00% | Trạng thái: Đang hoạt động | Nền tảng: VietLink Affiliate",
+        "commission": 100000,
+        "orderValue": 2000000,
+        "timestamp": "2025-05-14T07:33:53+00:00"
+    },
+    {
+        "name": "Tên: Trần Thị B | Email: b@gmail.com | Tỷ lệ hoa hồng: 8.00% | Trạng thái: Ngừng hoạt động | Nền tảng: VietLink Affiliate",
+        "commission": 160000,
+        "orderValue": 2000000,
+        "timestamp": "2025-05-14T07:33:53+00:00"
+    },
+    {
+        "name": "Tên: Lê Văn C | Email: c@gmail.com | Tỷ lệ hoa hồng: 10.00% | Trạng thái: Đang hoạt động | Nền tảng: VietLink Affiliate | Bonus\/đơn: 50000 VNĐ",
+        "commission": 250000,
+        "orderValue": 2000000,
+        "timestamp": "2025-05-14T07:33:53+00:00"
+    },
+    {
+        "name": "Tên: Quânminh | Email: admin@gmail.com | Tỷ lệ hoa hồng: 0.05% | Trạng thái: Đang hoạt động | Nền tảng: VietLink Affiliate",
+        "commission": 1000,
+        "orderValue": 2000000,
+        "timestamp": "2025-05-14T07:33:53+00:00"
+    },
+    {
+        "name": "Tên: iphone 13 pro | Email: quantmph50279@gmail.com | Tỷ lệ hoa hồng: 10.00% | Trạng thái: Ngừng hoạt động | Nền tảng: VietLink Affiliate",
+        "commission": 200000,
+        "orderValue": 2000000,
+        "timestamp": "2025-05-14T07:33:53+00:00"
+    }
+]
