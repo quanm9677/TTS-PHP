@@ -1,0 +1,15 @@
+{
+    "name": "dell/day8",
+    "autoload": {
+        "psr-4": {
+            "XYZBank\\": "src/XYZBank/"
+        }
+    },
+    "authors": [
+        {
+            "name": "quanm9677",
+            "email": "quanm9677@gmail.com"
+        }
+    ],
+    "require": {}
+}
