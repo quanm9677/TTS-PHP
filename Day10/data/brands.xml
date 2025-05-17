@@ -1,0 +1,12 @@
+<brands>
+    <category name="Điện tử">
+        <brand>Toshiba</brand>
+        <brand>Samsung</brand>
+        <brand>LG</brand>
+    </category>
+    <category name="Thời trang">
+        <brand>Zara</brand>
+        <brand>H&M</brand>
+        <brand>Uniqlo</brand>
+    </category>
+</brands>

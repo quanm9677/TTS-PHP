@@ -1,0 +1,16 @@
+BrandController được gọi với category: Điện tử
+BrandController được gọi với category: Thời trang
+BrandController được gọi với category: 
+XML Error: EntityRef: expecting ';'
+
+XML Error: EntityRef: expecting ';'
+
+XML path: C:\laragon\www\TTS-NON-S\PHP\ecommerce-mvc\data\brands.xml
+Đường dẫn XML: C:\laragon\www\TTS-NON-S\PHP\ecommerce-mvc\data\brands.xml
+Đường dẫn XML đang dùng: C:\laragon\www\TTS-NON-S\PHP\ecommerce-mvc\data\brands.xml
+Lỗi XML: EntityRef: expecting ';'
+
+Đường dẫn XML đang dùng: C:\laragon\www\TTS-NON-S\PHP\ecommerce-mvc\data\brands.xml
+Category yêu cầu: Điện tử
+Category yêu cầu: Thời trang
+Category yêu cầu: Thời trang
